@@ -7,7 +7,7 @@
 #define MAX_N 1000000
 #define PASSO 50000
 
-// ---------------- Estruturas ----------------
+
 
 typedef struct Item {
     char *key;
@@ -21,7 +21,6 @@ typedef struct Dictionary {
     Item **table;
 } Dictionary;
 
-// ---------------- Funções de hash ----------------
 
 unsigned int hashCode(const char *key, int table_size) {
     unsigned long hash = 5381;
@@ -32,7 +31,6 @@ unsigned int hashCode(const char *key, int table_size) {
     return hash % table_size;
 }
 
-// ---------------- Dicionário ----------------
 
 Dictionary *createDictionary(int size) {
     Dictionary *dict = malloc(sizeof(Dictionary));
@@ -110,7 +108,7 @@ void freeDictionary(Dictionary *dict) {
     free(dict);
 }
 
-// ---------------- Auxiliares ----------------
+
 
 void gerarChaveAleatoria(char *destino, int tamanho) {
     const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -172,7 +170,7 @@ void printSortedDictionary(Dictionary *dict) {
     free(keys); 
 }
 
-// ---------------- Main com testes ----------------
+
 
 int main() {
     srand(time(NULL));
